@@ -20,7 +20,7 @@ Kickstart.nvim is a template for your own configuration.
 
   And then you can explore or search through `:help lua-guide`
   - https://neovim.io/doc/user/lua-guide.html
-
+init
 
 Kickstart Guide:
 
@@ -112,7 +112,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',  opts = {} },
+  { 'folke/which-key.nvim', opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -153,10 +153,12 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
-    'olimorris/onedarkpro.nvim',
+    -- Theme
+    'neanias/everforest-nvim',
     priority = 1000,
-    vim.cmd 'colorscheme onedark',
+    config = function()
+      vim.cmd.colorscheme 'everforest'
+    end,
   },
 
   {
@@ -166,7 +168,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = true,
-        theme = 'auto',
+        theme = 'everforest',
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = {
@@ -347,7 +349,6 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 -- my keymaps
 vim.g.mapleader = ' '
-vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")

@@ -37,6 +37,8 @@ return {
     },
     config = function()
       require('nvim-tree').setup {}
+      vim.api.nvim_set_keymap('n', '<leader>f', ':NvimTreeFindFile<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>ct', ':NvimTreeCollapse<CR>', { noremap = true, silent = true })
     end,
   },
   {

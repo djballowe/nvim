@@ -24,8 +24,6 @@ return {
           -- file_browser = { ... }
         },
       }
-      require('telescope').load_extension 'undo'
-      vim.keymap.set('n', '<leader>u', '<cmd>Telescope undo<cr>')
     end,
   },
   {
@@ -84,4 +82,8 @@ return {
       require('trouble').toggle()
     end),
   },
+  {
+    'mbbill/undotree',
+    vim.api.nvim_set_keymap('n', '<leader>u', ':UndotreeToggle<CR>', { noremap = true, silent = true })
+  }
 }

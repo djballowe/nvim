@@ -252,7 +252,7 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 -- my set config
-vim.opt.guicursor = ''
+vim.opt.guicursor = 'n-v-i-c:block-Cursor'
 
 vim.opt.nu = true
 vim.opt.relativenumber = true

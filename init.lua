@@ -266,7 +266,7 @@ vim.opt.smartindent = true
 
 vim.opt.wrap = false
 
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false

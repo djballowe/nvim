@@ -327,11 +327,19 @@ vim.keymap.set('n', '<leader>k', '<cmd>lnext<CR>zz')
 vim.keymap.set('n', '<leader>j', '<cmd>lprev<CR>zz')
 
 vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
 
 vim.keymap.set('n', '<leader><leader>', function()
   vim.cmd 'so'
 end)
+
+-- Set cursor style and color
+vim.opt.guicursor = "n-v-c:block-Cursor/lCursor"
+
+-- Set highlight for the cursor in normal, visual, and command-line modes
+vim.api.nvim_set_hl(0, "Cursor", { fg = "white", bg = "white" })
+
+-- Set highlight for the cursor in insert mode
+vim.api.nvim_set_hl(0, "iCursor", { fg = "white", bg = "white" })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`

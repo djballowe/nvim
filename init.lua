@@ -342,6 +342,12 @@ vim.keymap.set('n', '<leader>j', '<cmd>lprev<CR>zz')
 
 vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
+-- neogit remaps
+local neogit = require 'neogit'
+vim.keymap.set('n', '<leader>go', neogit.open, { silent = true, noremap = true })
+vim.keymap.set('n', '<leader>gb', ':Neogit branch<CR>', { silent = true, noremap = true })
+vim.keymap.set('n', '<leader>gm', ':Neogit commit<CR>', { silent = true, noremap = true })
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })

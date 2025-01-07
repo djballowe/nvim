@@ -344,7 +344,9 @@ vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 -- neogit remaps
 local neogit = require 'neogit'
-vim.keymap.set('n', '<leader>go', neogit.open, { silent = true, noremap = true })
+vim.keymap.set('n', '<leader>go', function()
+  neogit.open { kind = 'split' }
+end, { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>gb', ':Neogit branch<CR>', { silent = true, noremap = true })
 vim.keymap.set('n', '<leader>gm', ':Neogit commit<CR>', { silent = true, noremap = true })
 

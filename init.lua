@@ -56,13 +56,13 @@ require('lazy').setup({
   {
     'NeogitOrg/neogit',
     dependencies = {
-      'nvim-lua/plenary.nvim',  -- required
+      'nvim-lua/plenary.nvim', -- required
       'sindrets/diffview.nvim', -- optional - Diff integration
 
       -- Only one of these is needed.
       'nvim-telescope/telescope.nvim', -- optional
-      'ibhagwan/fzf-lua',              -- optional
-      'echasnovski/mini.pick',         -- optional
+      'ibhagwan/fzf-lua', -- optional
+      'echasnovski/mini.pick', -- optional
     },
     config = true,
   },
@@ -84,7 +84,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',  opts = {} },
+  { 'folke/which-key.nvim', opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -267,7 +267,7 @@ vim.o.termguicolors = true
 vim.opt.guicursor = 'n-v-i-c:block-Cursor'
 
 vim.opt.nu = true
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -451,7 +451,7 @@ require('nvim-tree').setup {
     sorter = 'case_sensitive',
   },
   view = {
-    width = 30,
+    width = 50,
   },
   renderer = {
     group_empty = true,

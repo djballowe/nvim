@@ -56,13 +56,13 @@ require('lazy').setup({
   {
     'NeogitOrg/neogit',
     dependencies = {
-      'nvim-lua/plenary.nvim', -- required
+      'nvim-lua/plenary.nvim',  -- required
       'sindrets/diffview.nvim', -- optional - Diff integration
 
       -- Only one of these is needed.
       'nvim-telescope/telescope.nvim', -- optional
-      'ibhagwan/fzf-lua', -- optional
-      'echasnovski/mini.pick', -- optional
+      'ibhagwan/fzf-lua',              -- optional
+      'echasnovski/mini.pick',         -- optional
     },
     config = true,
   },
@@ -84,7 +84,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',  opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -278,7 +278,7 @@ vim.opt.smartindent = true
 
 vim.opt.wrap = false
 
-vim.opt.cursorline = false
+vim.opt.cursorline = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -295,6 +295,15 @@ vim.opt.signcolumn = 'yes'
 vim.opt.isfname:append '@-@'
 
 vim.opt.updatetime = 50
+
+-- Auto read on buffer changes outside of Vim
+vim.opt.autoread = true
+vim.api.nvim_create_autocmd("FileChangedShellPost", {
+  pattern = "*",
+  callback = function()
+    vim.notify("File changed on disk. Buffer updated", vim.log.levels.INFO)
+  end,
+})
 
 -- [[ Basic Keymaps ]]
 

@@ -494,6 +494,7 @@ vim.defer_fn(function()
       'scss',
       'json',
       'graphql',
+      'sql'
     },
 
     ignore_install = {},

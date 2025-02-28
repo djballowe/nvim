@@ -42,7 +42,7 @@ return {
     'stevearc/conform.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
-      local conform = require('conform')
+      local conform = require 'conform'
       conform.setup {
         formatters_by_ft = {
           javascript = { 'prettier' },
@@ -58,6 +58,7 @@ return {
           lua = { 'stylua' },
           c = { 'clang-format' },
           cpp = { 'clang-format' },
+          sql = { 'sql_formatter' },
         },
       }
       vim.keymap.set({ 'n', 'v' }, '<leader>mp', function()

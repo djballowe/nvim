@@ -1,6 +1,3 @@
--- Plugin list I want to add
--- home page nvim thing
--- surround.nvim
 return {
   {
     'nvim-telescope/telescope.nvim',
@@ -33,7 +30,20 @@ return {
       'nvim-tree/nvim-web-devicons',
     },
     config = function()
-      require('nvim-tree').setup {}
+      require('nvim-tree').setup {
+        sort = {
+          sorter = 'case_sensitive',
+        },
+        view = {
+          width = 50,
+        },
+        renderer = {
+          group_empty = true,
+        },
+        filters = {
+          dotfiles = true,
+        },
+      }
       vim.api.nvim_set_keymap('n', '<leader>f', ':NvimTreeFindFile<CR>', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<leader>ct', ':NvimTreeCollapse<CR>', { noremap = true, silent = true })
     end,

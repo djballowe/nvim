@@ -224,7 +224,9 @@ require('lazy').setup({
   --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  { import = 'custom.plugins' },
+  require 'custom.plugins.telescope',
+  require 'custom.plugins.nvim-tree',
+  -- { import = 'custom.plugins' },
 }, {})
 
 require("setup.keymaps")
@@ -261,17 +263,17 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
-require('telescope').setup {
-  defaults = {
-    file_ignore_patterns = { 'node%_modules/.*' },
-    mappings = {
-      i = {
-        ['<C-u>'] = false,
-        ['<C-d>'] = false,
-      },
-    },
-  },
-}
+-- require('telescope').setup {
+--   defaults = {
+--     file_ignore_patterns = { 'node%_modules/.*' },
+--     mappings = {
+--       i = {
+--         ['<C-u>'] = false,
+--         ['<C-d>'] = false,
+--       },
+--     },
+--   },
+-- }
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
@@ -336,9 +338,6 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
--- set termguicolors to enable highlight groups
-vim.opt.termguicolors = true
 
 -- mapping
 local api = require 'nvim-tree.api'
@@ -513,6 +512,7 @@ local servers = {
   -- rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+  bashls = { filetypes = { 'sh', 'bats' } },
 
   lua_ls = {
     Lua = {

@@ -41,6 +41,7 @@ require('lazy').setup({
       end, { noremap = true, silent = true })
       vim.keymap.set('n', '<leader>gb', ':Neogit branch<CR>', { silent = true, noremap = true })
       vim.keymap.set('n', '<leader>gm', ':Neogit commit<CR>', { silent = true, noremap = true })
+      vim.keymap.set('n', '<leader>dc', ':DiffviewClose<CR>', { desc = 'Close DiffView' })
     end
   },
 

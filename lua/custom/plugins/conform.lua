@@ -13,7 +13,7 @@ return {
           css = { 'prettier' },
           html = { 'prettier' },
           json = { 'prettier' },
-          yaml = { 'prettier' },
+          yaml = { 'yamlfmt' },
           markdown = { 'prettier' },
           graphql = { 'prettier' },
           lua = { 'stylua' },
@@ -21,7 +21,8 @@ return {
           cpp = { 'clang-format' },
           sql = { 'sql_formatter' },
           go = { 'gofmt' },
-          sh = { 'shfmt' }
+          sh = { 'shfmt' },
+          rust = { 'rustfmt' }
         },
         formatters = {
           shfmt = {

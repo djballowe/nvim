@@ -16,6 +16,7 @@ return {
           yaml = { 'prettier' },
           markdown = { 'prettier' },
           graphql = { 'prettier' },
+          astro = { 'prettier' },
           lua = { 'stylua' },
           c = { 'clang-format' },
           cpp = { 'clang-format' },

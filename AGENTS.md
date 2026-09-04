@@ -9,7 +9,7 @@ This is a Neovim configuration based on kickstart.nvim. It uses lazy.nvim as the
 ## Linting/Formatting
 
 ```bash
-stylua --check .   # Check Lua formatting (used in CI)
+stylua --check .   # Check Lua formatting
 stylua .           # Fix Lua formatting
 ```
 

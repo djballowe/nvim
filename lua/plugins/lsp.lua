@@ -59,6 +59,12 @@ return {
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local servers = {
         bashls = {},
+        ts_ls = {},
+        esliint = {},
+        jsonls = {},
+        yamlls = {},
+        cssls = {},
+        typos_lsp = {},
         lua_ls = {
           settings = {
             Lua = {
